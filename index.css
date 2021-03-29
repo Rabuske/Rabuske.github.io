@@ -95,3 +95,8 @@ ul.contact-info {
     border-bottom-style: dotted;
     border-color: var(--font-color-secondary);
 }
+
+/* Style for Education elements */
+.education {
+    grid-area: education;
+}
