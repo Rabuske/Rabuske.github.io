@@ -1,0 +1,97 @@
+.theme-light {
+    --color-primary: rgb(0, 0, 0);
+    --color-secondary: rgb(255,255,255);
+    --color-accent: rgb(0, 105, 190);
+    --font-color: rgb(97, 97, 97);
+    --font-color-secondary: rgb(143, 143, 143);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-areas: "leftSpace header header rightSpace"
+                         "leftSpace experience summary rightSpace"
+                         "leftSpace experience summary rightSpace"
+                         "leftSpace experience technologies rightSpace"
+                         "leftSpace experience technologies rightSpace"
+                         "leftSpace education proudof rightSpace"
+                         "leftSpace education proudof rightSpace"
+                         "leftSpace education aboutme rightSpace";
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    font-family: 'Noto Sans', serif;
+    font-weight: 400;
+}
+
+.section-header {
+    color: var(--color-primary);
+}
+
+
+/* Style for header elements */
+.header {
+    grid-area: header;
+}
+
+.current-occupation {
+    color: var(--color-accent);
+}
+
+.contact-info {
+    columns: 2;
+    border-left-style: inset;
+}
+
+ul.contact-info {
+    list-style-type: none;
+}
+
+.contact-item {
+    color: var(--font-color);
+    font-size: small;
+}
+
+.material-icons.contact-item {
+    color: var(--color-accent);
+    font-size: medium;
+}
+
+/* Style for Experience elements */
+.experience {
+    grid-area: experience;
+    color: var(--font-color);
+}
+
+.experience-title{
+    margin: 0;
+    color: var(--color-primary);
+}
+
+
+.experience-duration * {
+    font-size: smaller;
+    color: var(--font-color-secondary);
+}
+
+.experience-company {
+    margin-right: 10px;
+    color: var(--color-accent);
+    font-size: medium;
+    font-weight: bold;
+}
+
+.experience-subtitle {
+    margin: 5px;
+    font-size: small;
+}
+
+.experience-list {
+    margin: 0;
+    font-size: small;
+}
+
+.experience-hr {
+    border-style: hidden;
+    border-bottom-style: dotted;
+    border-color: var(--font-color-secondary);
+}
