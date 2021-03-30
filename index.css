@@ -8,27 +8,76 @@
 
 .content {
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
     grid-template-areas: "leftSpace header header rightSpace"
                          "leftSpace experience summary rightSpace"
-                         "leftSpace experience summary rightSpace"
-                         "leftSpace experience technologies rightSpace"
-                         "leftSpace experience technologies rightSpace"
+                         "leftSpace experience proudof rightSpace"
                          "leftSpace education proudof rightSpace"
-                         "leftSpace education proudof rightSpace"
-                         "leftSpace education aboutme rightSpace";
+                         "leftSpace technologies languages rightSpace"
+                         "leftSpace footer footer rightSpace";
+    column-gap: 2em;
     background-color: var(--color-secondary);
     color: var(--color-primary);
     font-family: 'Noto Sans', serif;
     font-weight: 400;
 }
 
-.section-header {
-    color: var(--color-primary);
+@media print {
+    body {
+        margin: 10px;
+    }
+    .content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "header header"
+                             "experience summary"
+                             "experience proudof"
+                             "education proudof"
+                             "technologies languages"
+                             "space space"
+                             "footer footer";
+        column-gap: 2em;
+    }
+    .footer {
+        grid-area: footer;       
+        align-items: center; 
+        font-size: small;
+        color: var(--font-color-secondary);        
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .content {
+        grid-template-columns: auto auto;
+        grid-template-areas: "header header"
+                             "experience summary"
+                             "experience proudof"
+                             "education proudof"
+                             "technologies languages"
+                             "space space"
+                             "footer footer";
+        column-gap: 2em;
+    }    
 }
 
 
-/* Style for header elements */
+@media screen and (max-width: 850px) {
+    .content {
+        grid-template-columns: auto;
+        grid-template-areas: "header"
+                             "experience"
+                             "education"
+                             "technologies"
+                             "summary"
+                             "proudof"
+                             "languages";
+    }    
+}
+
+.section-title {
+    color: var(--color-primary);
+}
+
 .header {
     grid-area: header;
 }
@@ -56,7 +105,6 @@ ul.contact-info {
     font-size: medium;
 }
 
-/* Style for Experience elements */
 .experience {
     grid-area: experience;
     color: var(--font-color);
@@ -78,6 +126,7 @@ ul.contact-info {
     color: var(--color-accent);
     font-size: medium;
     font-weight: bold;
+    margin-block: 5px;
 }
 
 .experience-subtitle {
@@ -90,13 +139,84 @@ ul.contact-info {
     font-size: small;
 }
 
-.experience-hr {
+.subdivision-hr {
     border-style: hidden;
     border-bottom-style: dotted;
     border-color: var(--font-color-secondary);
 }
 
-/* Style for Education elements */
 .education {
     grid-area: education;
+}
+
+.summary {
+    grid-area: summary;
+}
+
+.summary-description {
+    color: var(--font-color);
+    font-size: small;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.technologies {
+    grid-area: technologies;
+}
+
+.technologies-description {
+    font-size: medium;
+    color: var(--font-color)
+}
+
+.technologies-list * {
+    font-size: small;
+    color: var(--font-color)
+}
+
+.proudof {
+    grid-area: proudof;
+    color: var(--font-color);
+}
+
+.proudof-icon {
+    font-size: xx-large;
+    color: var(--color-accent);
+}
+
+.proudof-title {
+    font-size: medium;
+}
+
+.proudof-description {
+    font-size: small;
+    text-align: justify;
+}
+
+.languages {
+    grid-area: languages;
+}
+
+#languages-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#languages-table * {
+    font-size: medium;
+    color: var(--font-color);
+    padding: 10px;
+}
+
+#languages-table tr {
+    border-bottom: 1px dotted var(--font-color-secondary    );
+    height: 50px;
+}
+
+.footer {
+    grid-area: footer;       
+    align-items: center; 
+    font-size: small;
+    color: var(--font-color-secondary);
+    display: none;    
 }
