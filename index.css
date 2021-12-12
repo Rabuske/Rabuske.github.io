@@ -12,8 +12,8 @@
     grid-template-areas: "leftSpace header header rightSpace"
                          "leftSpace experience summary rightSpace"
                          "leftSpace experience proudof rightSpace"
-                         "leftSpace education proudof rightSpace"
-                         "leftSpace technologies languages rightSpace"
+                         "leftSpace education technologies rightSpace"
+                         "leftSpace education languages rightSpace"
                          "leftSpace footer footer rightSpace";
     column-gap: 2em;
     background-color: var(--color-secondary);
@@ -32,7 +32,8 @@
                              "experience summary"
                              "experience proudof"
                              "education proudof"
-                             "technologies languages"
+                             "education technologies"
+                             "education languages"
                              "space space"
                              "footer footer";
         column-gap: 2em;
@@ -52,8 +53,8 @@
         grid-template-areas: "header header"
                              "experience summary"
                              "experience proudof"
-                             "education proudof"
-                             "technologies languages"
+                             "education technologies"
+                             "education languages"
                              "space space"
                              "footer footer";
         column-gap: 2em;
@@ -219,4 +220,13 @@ ul.contact-info {
     font-size: small;
     color: var(--font-color-secondary);
     display: none;    
+}
+
+.material-icons.picture_as_pdf {
+    color: var(--color-accent);
+    font-size: medium;
+}
+
+.download_pdf {
+
 }
