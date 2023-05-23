@@ -25,6 +25,7 @@
 @media print {
     body {
         margin: 10px;
+        page-break-inside: avoid;        
     }
     .content {
         grid-template-columns: 1fr 1fr;
